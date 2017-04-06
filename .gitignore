@@ -1,5 +1,4 @@
-
-/.idea
-/.tmp
-/node_modules
-/build
+.tmp
+node_modules
+bower_components
+/.sass-cache
