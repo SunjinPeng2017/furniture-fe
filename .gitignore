@@ -1,5 +1,6 @@
 .idea
 .tmp
-node_modules
-bower_components
+dist/
+node_modules/
+bower_components/
 /.sass-cache
