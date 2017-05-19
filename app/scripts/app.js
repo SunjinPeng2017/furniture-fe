@@ -15,5 +15,11 @@ angular.module('furniturefe', [
             controller: 'LoginCtrl',
             controllerAs: 'login'
         })
+        .state('main', {
+            url: '/main',
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl',
+            controllerAs: 'main'
+        })
 }).run(['$rootScope', '$cookies', '$location', '$log', function ($rootScope, $cookies, $location, $log) {
 }]);
