@@ -3,12 +3,33 @@
 <head>
     <meta charset="utf-8">
     <title>本居项目</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
     <!-- endbower -->
+
+    <link rel="stylesheet" href="styles/login.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
 </head>
-<body>
+<body ng-app="furniturefe">
+<div class="header">
+    <div class="box-top-left">
+        <img src="images/login/icon_logo.png" title="系统首页"/>
+        <div class="box-title">
+            <div class="title-big">家具定制管理系统</div>
+            <div class="title-small">——前端展示页面</div>
+        </div>
+    </div>
+</div>
+<div class="content" ui-view>
+</div>
+<div class="footer">
+    <p style="margin-top: 4px">Copyright 2017, All rights reserved to SunjinPeng in
+        https://github.com/SunjinPeng2017/furniture-fe.git</p>
+</div>
 
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -21,5 +42,14 @@
 <script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
 <script src="bower_components/file-saver/FileSaver.js"></script>
 <!-- endbower -->
+
+<!-- Configs -->
+<script src="scripts/app.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Controllers -->
+<script src="scripts/controllers/LoginCtrl.js"></script>
 </body>
 </html>
