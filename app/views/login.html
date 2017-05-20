@@ -14,11 +14,12 @@
         <form>
         <ul class="ul-login">
             <li>登录</li>
-            <p class="tips"></p>
+            <span class="tips"></span>
             <li><input type="text" name="userName" class="input-login-text"
                        placeholder="请输入用户名" autofocus></li>
             <li><input type="password" name="passWord" class="input-login-text"
                                                  placeholder="请输入密码"></li>
+            <li style="width: 100%;height: 25px"><span style="float: right" ng-click="">没有账号？请注册</span></li>
             <li>
                 <button type="submit" class="btn-submit" ng-click="userLogin()">
                     <span ng-show="isLogging"><i class="fa fa-circle-o-notch fa-spin"></i></span>
