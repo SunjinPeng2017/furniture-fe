@@ -1,11 +1,23 @@
 <div class="content" id="login">
-    <form>
+    <div class="banner" id="b04" style="overflow: hidden; width:100%; height: 100%;">
+        <ul style="width: 100%; position: relative;  height: 100%; overflow: hidden;">
+            <li><img src="../images/login/slide1.jpg" width="100%" height="100%"></li>
+            <li><img src="../images/login/slide2.jpg" width="100%" height="100%"></li>
+            <li><img src="../images/login/slide3.jpg" width="100%" height="100%"></li>
+        </ul>
+        <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al"
+                                                                         src="../images/login/arrowl.png" alt="prev"
+                                                                         width="20" height="35"></a>
+        <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar"
+                                                                         src="../images/login/arrowr.png" alt="next"
+                                                                         width="20" height="37"></a>
+        <form>
         <ul class="ul-login">
             <li>登录</li>
             <p class="tips"></p>
-            <li style="margin-left: 30px"><input type="text" name="userName" class="input-login-text"
-                                                 placeholder="请输入用户名"></li>
-            <li style="margin-left: 30px"><input type="password" name="passWord" class="input-login-text"
+            <li><input type="text" name="userName" class="input-login-text"
+                       placeholder="请输入用户名" autofocus></li>
+            <li><input type="password" name="passWord" class="input-login-text"
                                                  placeholder="请输入密码"></li>
             <li>
                 <button type="submit" class="btn-submit" ng-click="userLogin()">
@@ -15,4 +27,6 @@
             </li>
         </ul>
     </form>
+    </div>
 </div>
+
