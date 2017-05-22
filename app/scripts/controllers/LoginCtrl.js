@@ -11,6 +11,7 @@ angular.module('furniturefe')
         };
         //是否打开动画
         $scope.isLogging = false;
+        $scope.isLogged = false;
 
         /**
          *  延时登录3秒 打开动画
@@ -30,7 +31,7 @@ angular.module('furniturefe')
                     }),
                     data04 = unslider04.data('unslider');
                 $('.unslider-arrow04').click(function () {
-                    var fn = this.className.split(' ')[1];
+                    let fn = this.className.split(' ')[1];
                     data04[fn]();
                 });
             });
