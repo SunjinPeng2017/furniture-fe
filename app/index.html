@@ -12,10 +12,14 @@
     <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
     <!-- endbower -->
 
+    <!-- user defined css-->
     <link rel="stylesheet" href="styles/login.css"/>
     <link rel="stylesheet" href="styles/main.css"/>
+
+    <!-- lib css-->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css"/>
+
 </head>
 <body ng-app="furniturefe">
 <div class="header">
@@ -27,6 +31,7 @@
         </div>
     </div>
 </div>
+<span id="main"></span>
 <div class="content" ui-view>
 </div>
 <div class="footer">
@@ -55,4 +60,11 @@
 <script src="scripts/controllers/LoginCtrl.js"></script>
 <script src="scripts/controllers/MainCtrl.js"></script>
 </body>
+<script>
+    //侧边栏点击改变class
+    function createCss(my) {
+        $('.ul-menu').find('li').removeClass('item-active');
+        $(my).parent().addClass('item-active');
+    }
+</script>
 </html>

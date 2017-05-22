@@ -84,3 +84,88 @@ input, button, select, textarea {
     color: red;
     top: 57px;
 }
+
+.menu {
+    position: fixed;
+    left: 0;
+    float: left;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    background: #E6E6E6;
+    z-index: 100;
+    height: 85%;
+}
+
+.ul-menu {
+    margin: 20px 0 0;
+    padding: 0;
+    width: 187px;
+}
+
+.li-item {
+    /*padding: 10px 0;*/
+}
+
+.li-item img:nth-child(1) {
+    display: inline;
+}
+
+.li-item img:nth-child(2) {
+    display: none;
+}
+
+.item-active .menu-title {
+    background: url(../images/main/sekuai.png) no-repeat left, url(../images/main/down.png) no-repeat 158px;
+    background-color: #FFFFFF;
+}
+
+.menu-title {
+    /*margin: 0 0 0 -20px;*/
+    line-height: 36px;
+    margin: 0;
+    color: #727272;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.icon-menu {
+    float: left;
+    width: 40px;
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+}
+
+.item-active img:nth-child(1) {
+    display: none;
+}
+
+.item-active img:nth-child(2) {
+    display: inline;
+}
+
+.item-active > .item-menu {
+    display: block;
+}
+
+.item-menu {
+    display: none;
+    line-height: 30px;
+    font-weight: normal;
+    background: #D3E3F0;
+    padding: 0;
+}
+
+.item-menu a {
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    display: block;
+    color: #727272;
+    padding-left: 58px;
+}
+
+.item-menu .active {
+    color: #08a1ef;
+    background-color: #EEF7FE;
+}
