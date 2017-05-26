@@ -30,7 +30,7 @@ angular.module('furniturefe')
             str += '<p class="menu-title"  onclick="createCss(this)">档案管理</p>';
             str += '<ul class="item-menu">';
             str += '<li><a ui-sref="customer_info" >客户档案</a></li>';
-            str += '<li><a ui-sref="coupon_manager" >存货档案</a></li>';
+            str += '<li><a ui-sref="storage_info" >存货档案</a></li>';
             str += '<li><a ui-sref="coupon_history" >供应商档案</a></li>';
             str += '</ul>';
             str += '</li>';

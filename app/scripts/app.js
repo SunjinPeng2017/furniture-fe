@@ -27,6 +27,12 @@ angular.module('furniturefe', [
             controller: 'CustomerInfoCtrl',
             controllerAs: 'CustomerInfoCtrl'
         })
+        .state('storage_info', {
+            url: '/storage_info',
+            templateUrl: 'views/personInfo/storage_info.html',
+            controller: 'StorageInfoCtrl',
+            controllerAs: 'StorageInfoCtrl'
+        })
         .state('user_info', {
             url: '/user_info',
             templateUrl: 'views/personInfo/user_info.html',
