@@ -31,7 +31,7 @@ angular.module('furniturefe')
             str += '<ul class="item-menu">';
             str += '<li><a ui-sref="customer_info" >客户档案</a></li>';
             str += '<li><a ui-sref="storage_info" >存货档案</a></li>';
-            str += '<li><a ui-sref="coupon_history" >供应商档案</a></li>';
+            str += '<li><a ui-sref="supply_info" >供应商档案</a></li>';
             str += '</ul>';
             str += '</li>';
             str += '<li class="li-item">';
