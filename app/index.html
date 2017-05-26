@@ -67,5 +67,11 @@
         $('.ul-menu').find('li').removeClass('item-active');
         $(my).parent().addClass('item-active');
     }
+
+    mainPage = (my) => {
+        $('.ul-menu').find('li').removeClass('item-active');
+        $(my).parent().addClass('item-active');
+        window.location.href = '#/main';
+    };
 </script>
 </html>

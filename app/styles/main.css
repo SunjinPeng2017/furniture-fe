@@ -121,8 +121,20 @@ input, button, select, textarea {
     background-color: #FFFFFF;
 }
 
+.item-active .menu-title2 {
+    background: url(../images/main/sekuai.png) no-repeat left;
+    background-color: #FFFFFF;
+}
+
 .menu-title {
-    /*margin: 0 0 0 -20px;*/
+    line-height: 36px;
+    margin: 0;
+    color: #727272;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu-title2 {
     line-height: 36px;
     margin: 0;
     color: #727272;

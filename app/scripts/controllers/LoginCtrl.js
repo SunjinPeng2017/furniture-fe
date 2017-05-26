@@ -11,7 +11,7 @@ angular.module('furniturefe')
         };
         //是否打开动画
         $scope.isLogging = false;
-        $scope.isLogged = false;
+        $rootScope.isLogged = false;
 
         /**
          *  延时登录3秒 打开动画

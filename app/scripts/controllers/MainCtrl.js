@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
 angular.module('furniturefe')
     .controller('MainCtrl', ['$rootScope', '$scope', '$location', '$cookies', '$filter', '$compile', '$timeout', function ($rootScope, $scope, $location, $cookies, $filter, $compile, $timeout) {
 
-        $scope.isLogged = true;
+        $rootScope.isLogged = true;
 
         /**
          * 配置左边导航栏
@@ -22,16 +22,7 @@ angular.module('furniturefe')
             str += '<li class="li-item item-active">';
             str += '<img src="images/main/icon_eye.png" class="icon-menu">';
             str += '<img src="images/main/icon_eye_enter.png" class="icon-menu">';
-            str += '<p class="menu-title" onclick="createCss(this)">慧眼识客</p>';
-            str += '<ul class="item-menu">';
-            str += '<li class="active"><a ui-sref="custom_heat" >客流分布热力图</a></li>';
-            str += '<li><a ui-sref="custom_history" >历史客流分析</a></li>';
-            str += '<li><a ui-sref="hot_area" >热点区域分析</a></li>';
-            str += '<li><a ui-sref="time_area" >热点时段分析</a></li>';
-            str += '<li><a ui-sref="hot_search" >热点搜索分析</a></li>';
-            str += '<li><a ui-sref="personal_index" >用户画像分析</a></li>';
-            str += '<li><a ui-sref="crowd_source" >人群来源分析</a></li>';
-            str += '</ul>';
+            str += '<p class="menu-title2" onclick="mainPage(this)">系统主页</p>';
             str += '</li>';
             str += '<li class="li-item">';
             str += '<img src="images/main/icon_privilege.png" class="icon-menu">';
@@ -401,7 +392,6 @@ angular.module('furniturefe')
             myChart1.setOption(option1);
             myChart2.setOption(option2);
         };
-
 
         /**
          * 设置初始化加载函数
