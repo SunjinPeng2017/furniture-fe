@@ -39,6 +39,18 @@ angular.module('furniturefe', [
             controller: 'SupplyInfoCtrl',
             controllerAs: 'SupplyInfoCtrl'
         })
+        .state('manage_sale_order', {
+            url: '/manage_sale_order',
+            templateUrl: 'views/saleOrder/manage_sale_order.html',
+            controller: 'ManageSaleOrderCtrl',
+            controllerAs: 'ManageSaleOrderCtrl'
+        })
+        .state('manage_purchase_order', {
+            url: '/manage_purchase_order',
+            templateUrl: 'views/purchaseOrder/manage_purchase_order.html',
+            controller: 'ManagePurchaseOrderCtrl',
+            controllerAs: 'ManagePurchaseOrderCtrl'
+        })
         .state('user_info', {
             url: '/user_info',
             templateUrl: 'views/personInfo/user_info.html',

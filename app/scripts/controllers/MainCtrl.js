@@ -39,8 +39,7 @@ angular.module('furniturefe')
             str += '<img src="images/main/icon_hour_glass_enter.png" class="icon-menu">';
             str += '<p class="menu-title"  onclick="createCss(this)">销售订单</p>';
             str += '<ul class="item-menu">';
-            str += '<li><a ui-sref="shopSettlement" >查看销售订单</a></li>';
-            str += '<li><a ui-sref="shopSettlement" >管理销售订单</a></li>';
+            str += '<li><a ui-sref="manage_sale_order" >管理销售订单</a></li>';
             str += '</ul>';
             str += '</li>';
             str += '<li class="li-item">';
@@ -48,8 +47,7 @@ angular.module('furniturefe')
             str += '<img src="images/main/icon_sinan_enter.png" class="icon-menu">';
             str += '<p class="menu-title"  onclick="createCss(this)">采购订单</p>';
             str += '<ul class="item-menu">';
-            str += '<li><a ui-sref="business_analyze" >查看采购订单</a></li>';
-            str += '<li><a ui-sref="consumingHistory" >管理采购订单</a></li>';
+            str += '<li><a ui-sref="manage_purchase_order" >管理采购订单</a></li>';
             str += '</ul>';
             str += '</li>';
             str += '<li class="li-item">';
