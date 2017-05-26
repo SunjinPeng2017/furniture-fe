@@ -21,5 +21,17 @@ angular.module('furniturefe', [
             controller: 'MainCtrl',
             controllerAs: 'main'
         })
+        .state('customer_info', {
+            url: '/customer_info',
+            templateUrl: 'views/personInfo/customer_info.html',
+            controller: 'CustomerInfoCtrl',
+            controllerAs: 'CustomerInfoCtrl'
+        })
+        .state('user_info', {
+            url: '/user_info',
+            templateUrl: 'views/personInfo/user_info.html',
+            controller: 'UserInfoCtrl',
+            controllerAs: 'UserInfoCtrl'
+        })
 }).run(['$rootScope', '$cookies', '$location', '$log', function ($rootScope, $cookies, $location, $log) {
 }]);
