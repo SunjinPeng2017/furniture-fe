@@ -19,7 +19,7 @@
                 <button type="button" style="margin-left: 20px;outline: none" class="btn btn-warning">收&nbsp;款</button>
             </form>
             <hr/>
-            <table class="table table-striped">
+            <table class="table table-hover">
                 <thead>
                 <tr class="row-name">
                     <th style="width:12%">选/不选</th>
@@ -162,8 +162,8 @@
 
     <div class="popup_window" id="rulePopupDiv" style="display: none;">
         <div class="TC monitoring_tc">
-            <p class="XTC_title" id="addRulePopupTitle" style="display: none;">添加销售订单</p>
-            <p class="XTC_title" id="editRulePopupTitle" style="display: none;">编辑销售订单</p>
+            <p class="XTC_title" id="addSaleOrderPopupTitle" style="display: none;">添加销售订单</p>
+            <p class="XTC_title" id="editSaleOrderPopupTitle" style="display: none;">编辑销售订单</p>
             <div class="recordupdate_main dds">
                 <div class="Ncreate Bborder0 Mmargin0">
                     <div class="Ncreate_div Ncreate_div2">
@@ -229,11 +229,11 @@
                 </div>
                 <div class="PpaddingT10">
                     <input type="button" class="monitoring_input MmarginR70 FfloatR" value="添加"
-                           id="addRuleButton" style="display: none;" ng-click="toAddRule()">
+                           id="addSaleOrderButton" style="display: none;" ng-click="toAddRule()">
                     <input type="button" class="monitoring_input MmarginR70 FfloatR" value="保存"
-                           id="editRuleButton" style="display: none;" ng-click="doEditAutoAlertRule()">
+                           id="editSaleOrderButton" style="display: none;" ng-click="doEditAutoAlertRule()">
                     <input type="button" class="monitoring_input MmarginR70 FfloatR" value="取消"
-                           id="cancelEditButton" ng-click="cancelEdit()">
+                           id="cancelSaleOrderButton" ng-click="cancelAddEdit()">
                     <p class="Cclearb"></p>
                 </div>
             </div>
