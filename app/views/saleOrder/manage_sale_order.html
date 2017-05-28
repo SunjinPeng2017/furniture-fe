@@ -1,0 +1,242 @@
+<div class="content">
+    <div class="hole_content">
+        <div class="content_title" style="background-color: #A2D19E">
+            <span class="echart-font">销售订单管理</span>
+        </div>
+        <div class="content_table">
+            <form class="form-inline" style="margin-top: 10px;margin-left: 20px">
+                <button type="button" class="btn btn-primary" style="outline:none" ng-click="addSaleOrder()"><span
+                    class="glyphicon glyphicon-plus"></span>
+                    &nbsp 添加订单
+                </button>
+                <div class="form-group" style="margin-left: 20px">
+                    <input type="text" class="form-control" placeholder="请输入订单号" style="width: 300px"/>
+                    <button type="button" class="btn btn-success" style="outline:none"><i class="fa fa-search"></i>
+                        &nbsp; 查找
+                    </button>
+                </div>
+                <button type="button" style="margin-left: 20px;outline: none" class="btn btn-info">收定金</button>
+                <button type="button" style="margin-left: 20px;outline: none" class="btn btn-warning">收&nbsp;款</button>
+            </form>
+            <hr/>
+            <table class="table table-hover">
+                <thead>
+                <tr class="row-name">
+                    <th style="width:12%">选/不选</th>
+                    <th style="width:10%">新/旧</th>
+                    <th>订单号</th>
+                    <th>销售日期</th>
+                    <th>订单状态</th>
+                    <th>客户名称</th>
+                    <th>发货地址</th>
+                    <th>总金额</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td><span class="label label-default"> New </span></td>
+                    <td>FS012</td>
+                    <td>2017-3-21 12:23:34</td>
+                    <td>开立</td>
+                    <td>张三</td>
+                    <td>北京市</td>
+                    <td>36000元</td>
+                    <td>全付款<i class="fa fa-thumbs-up" aria-hidden="true"></i></td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td><span class="label label-info"> Old </span></td>
+                    <td>FS013</td>
+                    <td>2017-4-25 12:27:34</td>
+                    <td>审核</td>
+                    <td>李四</td>
+                    <td>上海市</td>
+                    <td>25678元</td>
+                    <td>无</td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td><span class="label label-info"> Old </span></td>
+                    <td>FS014</td>
+                    <td>2016-2-30 6:2:45</td>
+                    <td>已付定金</td>
+                    <td>王五</td>
+                    <td>广州市</td>
+                    <td>324242元</td>
+                    <td>无</td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td><span class="label label-default"> New </span></td>
+                    <td>FS015</td>
+                    <td>2017-11-2 7:34:56</td>
+                    <td>收款</td>
+                    <td>贾六</td>
+                    <td>荆州市</td>
+                    <td>322000元</td>
+                    <td>付款完成<i class="fa fa-heart" aria-hidden="true"></i></td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td><span class="label label-info"> Old </span></td>
+                    <td>FS016</td>
+                    <td>2017-7-1 2:2:4</td>
+                    <td>付定金</td>
+                    <td>张七</td>
+                    <td>深圳市</td>
+                    <td>1231310元</td>
+                    <td>无</td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td><span class="label label-default"> New </span></td>
+                    <td>FS017</td>
+                    <td>2013-10-21 12:23:34</td>
+                    <td>完成</td>
+                    <td>小明</td>
+                    <td>佛山市</td>
+                    <td>3121300元</td>
+                    <td>Very Happy.. <i class="fa fa-smile-o" aria-hidden="true"></i></td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="popup_window" id="rulePopupDiv" style="display: none;">
+        <div class="TC monitoring_tc">
+            <p class="XTC_title" id="addSaleOrderPopupTitle" style="display: none;">添加销售订单</p>
+            <p class="XTC_title" id="editSaleOrderPopupTitle" style="display: none;">编辑销售订单</p>
+            <div class="recordupdate_main dds">
+                <div class="Ncreate Bborder0 Mmargin0">
+                    <div class="Ncreate_div Ncreate_div2">
+                        <form class="form-horizontal" style="margin-left: 30px">
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">订单号</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="请输入销售订单号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">销售日期</label>
+                                <div class='col-xs-6' style="margin-left: 16px">
+                                    <div class="form-group">
+                                        <div class='input-group date' id='datetimepicker'>
+                                            <input type='text' class="form-control"/>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">订单状态</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>开立</option>
+                                        <option>审核</option>
+                                        <option>已付定金</option>
+                                        <option>收款</option>
+                                        <option>完成</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">客户名称</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="请输入客户名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">客户地址</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="请输入客户地址">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <lable class="col-xs-2 control-label ">总金额(元)</lable>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="请输入总金额">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <lable class="col-xs-2 control-label">备&nbsp;&nbsp;注</lable>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="请输入备注">
+                                </div>
+                            </div>
+                        </form>
+                        <p class="Cclearb"></p>
+                    </div>
+                </div>
+                <div class="PpaddingT10">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="添加"
+                           id="addSaleOrderButton" style="display: none;" ng-click="toAddSaleOrder()">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="保存"
+                           id="editSaleOrderButton" style="display: none;" ng-click="doEditAutoAlertRule()">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="取消"
+                           id="cancelSaleOrderButton" ng-click="cancelAddEdit()">
+                    <p class="Cclearb"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>本居项目</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <!-- endbower -->
+
+    <!-- user defined css-->
+    <link rel="stylesheet" href="styles/login.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/common.css"/>
+    <link rel="stylesheet" href="styles/saleOrder/saleOrder.css"/>
+
+    <!-- lib css-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="lib/sweetalert/dist/sweetalert.css"/>
+
+</head>
+<body ng-app="furniturefe" style="background-color: #EEEEEE">
+<div class="header">
+    <div class="box-top-left">
+        <img src="images/login/icon_logo.png" title="系统首页"/>
+        <div class="box-title">
+            <div class="title-big">家具定制管理系统</div>
+            <div class="title-small">——前端展示页面</div>
+        </div>
+    </div>
+</div>
+<span id="main"></span>
+<div class="content" ui-view>
+</div>
+<div class="footer">
+    <p style="margin-top: 4px">Copyright 2017, All rights reserved to SunjinPeng in
+        https://github.com/SunjinPeng2017/furniture-fe.git</p>
+</div>
+
+<!-- bower-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+<script src="bower_components/file-saver/FileSaver.js"></script>
+<script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<!-- endbower -->
+
+<!-- Configs -->
+<script src="scripts/app.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="lib/unslider/unslider.js"></script>
+<script src="lib/echarts/echarts.min.js"></script>
+<script src="lib/sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- Controllers -->
+<script src="scripts/controllers/LoginCtrl.js"></script>
+<script src="scripts/controllers/MainCtrl.js"></script>
+<script src="scripts/controllers/personInfo/CustomerInfoCtrl.js"></script>
+<script src="scripts/controllers/personInfo/UserInfoCtrl.js"></script>
+<script src="scripts/controllers/personInfo/SupplyInfoCtrl.js"></script>
+<script src="scripts/controllers/saleOrder/ManageSaleOrderCtrl.js"></script>
+<script src="scripts/controllers/purchaseOrder/ManagePurchaseOrderCtrl.js"></script>
+
+
+</body>
+<script>
+    //侧边栏点击改变class
+    function createCss(my) {
+        $('.ul-menu').find('li').removeClass('item-active');
+        $(my).parent().addClass('item-active');
+    }
+
+    mainPage = (my) => {
+        $('.ul-menu').find('li').removeClass('item-active');
+        $(my).parent().addClass('item-active');
+        window.location.href = '#/main';
+    };
+</script>
+</html>
