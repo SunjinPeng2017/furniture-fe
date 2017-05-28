@@ -17,7 +17,7 @@ angular.module('furniturefe')
          */
         $scope.addSaleOrder = () => {
             $('#addSaleOrderPopupTitle').show();
-            $('#editSaleOrderButton').show();
+            $('#addSaleOrderButton').show();
             $('#rulePopupDiv').show();
         };
 
@@ -37,6 +37,31 @@ angular.module('furniturefe')
          */
         let initDateTimePicker = () => {
             $('#datetimepicker').datetimepicker();
+        };
+
+        /**
+         *  点击 添加按钮确认 是否添加
+         */
+        $scope.toAddSaleOrder = () => {
+            swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel plx!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        $scope.cancelAddEdit();
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    } else {
+                        swal("Cancelled", "Your imaginary file is safe ", "error");
+                    }
+                });
         };
 
         init();
