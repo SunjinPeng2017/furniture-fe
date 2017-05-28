@@ -62,8 +62,7 @@ input, button, select, textarea {
     font-size: 26px;
     font-weight: bolder;
     color: #fff;
-    text-shadow: 0px 1px 0px #8A8A8A;
-    font-family: initial;
+    text-shadow: 0 1px 0 #8A8A8A;
 }
 
 .title-small {
@@ -73,8 +72,7 @@ input, button, select, textarea {
     font-weight: bolder;
     color: #fff;
     float: right;
-    text-shadow: 0px 1px 0px #8A8A8A;
-    font-family: initial;
+    text-shadow: 0 1px 0 #8A8A8A;
 }
 
 .box-top-right {
@@ -191,21 +189,21 @@ input, button, select, textarea {
     width: 100%;
     height: 10%;
     margin-top: 4%;
-    border-radius: 30px 30px 0 0;
+    border-radius: 15px 15px 0 0;
 }
 
 .echart-table {
     width: 100%;
     height: 80%;
     margin-bottom: 6%;
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 15px 15px;
 }
 
 .echart-font {
     font-size: 20px;
     font-weight: bolder;
     color: #fff;
-    text-shadow: 0px 1px 0px #8A8A8A;
+    text-shadow: 0 1px 0 #8A8A8A;
     font-family: initial;
     text-align: center;
     display: block;
