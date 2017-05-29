@@ -64,7 +64,7 @@ angular.module('furniturefe')
             str += '<p class="menu-title"  onclick="createCss(this)">系统设置</p>';
             str += '<ul class="item-menu">';
             str += '<li><a ui-sref="user_info" >个人中心</a></li>';
-            str += '<li><a ui-sref="sys_salesclerk" >用户管理</a></li>';
+            str += '<li><a ui-sref="user_manage" >用户管理</a></li>';
             str += '</ul>';
             str += '</li>';
             str += '</ul>';

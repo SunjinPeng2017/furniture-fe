@@ -63,5 +63,11 @@ angular.module('furniturefe', [
             controller: 'UserInfoCtrl',
             controllerAs: 'UserInfoCtrl'
         })
+        .state('user_manage', {
+            url: '/user_manage',
+            templateUrl: 'views/personInfo/user_manage.html',
+            controller: 'UserManageCtrl',
+            controllerAs: 'UserManageCtrl'
+        })
 }).run(['$rootScope', '$cookies', '$location', '$log', function ($rootScope, $cookies, $location, $log) {
 }]);
