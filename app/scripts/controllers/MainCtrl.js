@@ -55,8 +55,7 @@ angular.module('furniturefe')
             str += '<img src="images/main/icon_license_enter.png" class="icon-menu">';
             str += '<p class="menu-title"  onclick="createCss(this)">发货单</p>';
             str += '<ul class="item-menu">';
-            str += '<li><a ui-sref="store_manager" >查看发货单</a></li>';
-            str += '<li><a ui-sref="store_manager" >管理发货单</a></li>';
+            str += '<li><a ui-sref="manage_delivery_order" >管理发货单</a></li>';
             str += '</ul>';
             str += '</li>';
             str += '<li class="li-item">';
