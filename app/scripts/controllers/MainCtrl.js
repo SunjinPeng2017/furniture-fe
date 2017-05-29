@@ -59,15 +59,6 @@ angular.module('furniturefe')
             str += '</ul>';
             str += '</li>';
             str += '<li class="li-item">';
-            str += '<img src="images/main/icon_customized_services.png" class="icon-menu">';
-            str += '<img src="images/main/icon_customized_services_enter.png" class="icon-menu">';
-            str += '<p class="menu-title"  onclick="createCss(this)">出入库单</p>';
-            str += '<ul class="item-menu">';
-            str += '<li><a ui-sref="promotion_manager" >出入库单查看</a></li>';
-            str += '<li><a ui-sref="promotion_manager" >出入库单管理</a></li>';
-            str += '</ul>';
-            str += '</li>';
-            str += '<li class="li-item">';
             str += '<img src="images/main/icon_manage.png" class="icon-menu">';
             str += '<img src="images/main/icon_manage_enter.png" class="icon-menu">';
             str += '<p class="menu-title"  onclick="createCss(this)">系统设置</p>';
