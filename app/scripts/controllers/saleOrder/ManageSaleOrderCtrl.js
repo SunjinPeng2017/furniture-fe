@@ -44,22 +44,22 @@ angular.module('furniturefe')
          */
         $scope.toAddSaleOrder = () => {
             swal({
-                    title: "Are you sure?",
-                    text: "You will not be able to recover this imaginary file!",
+                    title: "Are you sure ?",
+                    text: "确定要添加该订单吗？",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, delete it!",
-                    cancelButtonText: "No, cancel plx!",
+                    confirmButtonText: "确认",
+                    cancelButtonText: "取消",
                     closeOnConfirm: false,
                     closeOnCancel: false
                 },
                 function (isConfirm) {
                     if (isConfirm) {
                         $scope.cancelAddEdit();
-                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        swal("成功!", "", "success");
                     } else {
-                        swal("Cancelled", "Your imaginary file is safe ", "error");
+                        swal("失败！", "", "error");
                     }
                 });
         };
