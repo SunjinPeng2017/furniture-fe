@@ -8,6 +8,7 @@ angular.module('furniturefe')
          */
         let init = () => {
             initUnsilder();
+            initDateTimePicker();
         };
         //是否打开动画
         $scope.isLogging = false;
@@ -35,6 +36,52 @@ angular.module('furniturefe')
                     data04[fn]();
                 });
             });
+        };
+
+        /**
+         * 增加 销售订单 按钮 点击事件
+         */
+        $scope.userRegister = () => {
+            $('#rulePopupDiv').show();
+        };
+
+        /**
+         * 取消 按钮 点击事件
+         */
+        $scope.cancelAddEdit = () => {
+            $('#rulePopupDiv').hide();
+        };
+
+        /**
+         * 初始化  DateTimePicker
+         */
+        let initDateTimePicker = () => {
+            $('#datetimepicker').datetimepicker();
+        };
+
+        /**
+         *  点击 添加按钮确认 是否添加
+         */
+        $scope.toRegister = () => {
+            swal({
+                    title: "Are you sure ?",
+                    text: "确定注册吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确认",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        $scope.cancelAddEdit();
+                        swal("成功!", "", "success");
+                    } else {
+                        swal("失败！", "", "error");
+                    }
+                });
         };
 
         /**
