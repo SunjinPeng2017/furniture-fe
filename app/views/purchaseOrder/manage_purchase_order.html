@@ -4,15 +4,30 @@
             <span class="echart-font">采购订单管理</span>
         </div>
         <div class="content_table">
-            <table class="table" style="margin-top: 15px">
+            <form class="form-inline" style="margin-top: 10px;margin-left: 20px">
+                <button type="button" class="btn btn-primary" style="outline:none" ng-click="addPurchaseOrder()"><span
+                    class="glyphicon glyphicon-plus"></span>
+                    &nbsp 添加采购订单
+                </button>
+                <div class="form-group" style="margin-left: 20px">
+                    <input type="text" class="form-control" placeholder="请输入采购订单号" style="width: 300px"/>
+                    <button type="button" class="btn btn-success" style="outline:none"><i class="fa fa-search"></i>
+                        &nbsp; 查找
+                    </button>
+                </div>
+                <button type="button" style="margin-left: 20px;outline: none" class="btn btn-info">审核</button>
+            </form>
+            <hr/>
+            <table class="table table-hover">
                 <thead>
                 <tr>
                     <th>采购单号</th>
                     <th>选/不选</th>
                     <th>供应商</th>
                     <th>销售单号</th>
+                    <th>存货编码</th>
                     <th>单据状态</th>
-                    <th>付款条件</th>
+                    <th>付款方式</th>
                     <th>订单日期</th>
                     <th>备注</th>
                     <th>操作</th>
@@ -29,13 +44,15 @@
                     </td>
                     <th>张三</th>
                     <th>FS012</th>
+                    <th>1</th>
                     <th>开立</th>
                     <th>在线支付</th>
                     <th>2017-4-23 4:23:45</th>
                     <th>无</th>
                     <td>
-                        <i class="fa fa-pencil" style="color:green"></i>
-                        <i class="fa fa-times" style="color: red"></i>
+                        <i class="fa fa-info-circle fa-lg" style="color:blue;"></i>
+                        <i class="fa fa-pencil fa-lg" style="color:green"></i>
+                        <i class="fa fa-times fa-lg" style="color: red"></i>
                     </td>
                 </tr>
                 <tr>
@@ -48,13 +65,15 @@
                     </td>
                     <th>李四</th>
                     <th>FS013</th>
+                    <th>2</th>
                     <th>付款</th>
                     <th>在线支付</th>
                     <th>2016-12-3 21:23:45</th>
                     <th>无</th>
                     <td>
-                        <i class="fa fa-pencil" style="color:green"></i>
-                        <i class="fa fa-times" style="color: red"></i>
+                        <i class="fa fa-info-circle fa-lg" style="color:blue"></i>
+                        <i class="fa fa-pencil fa-lg" style="color:green"></i>
+                        <i class="fa fa-times fa-lg" style="color: red"></i>
                     </td>
                 </tr>
                 <tr>
@@ -67,13 +86,15 @@
                     </td>
                     <th>王五</th>
                     <th>FS014</th>
+                    <th>3</th>
                     <th>付定金</th>
                     <th>在线支付</th>
                     <th>2017-2-12 4:43:45</th>
                     <th>无</th>
                     <td>
-                        <i class="fa fa-pencil" style="color:green"></i>
-                        <i class="fa fa-times" style="color: red"></i>
+                        <i class="fa fa-info-circle fa-lg" style="color:blue"></i>
+                        <i class="fa fa-pencil fa-lg" style="color:green"></i>
+                        <i class="fa fa-times fa-lg" style="color: red"></i>
                     </td>
                 </tr>
                 <tr>
@@ -86,13 +107,15 @@
                     </td>
                     <th>贾六</th>
                     <th>FS015</th>
+                    <th>4</th>
                     <th>完成</th>
                     <th>在线支付</th>
                     <th>2016-11-12 7:26:42</th>
                     <th>无</th>
                     <td>
-                        <i class="fa fa-pencil" style="color:green"></i>
-                        <i class="fa fa-times" style="color: red"></i>
+                        <i class="fa fa-info-circle fa-lg" style="color:blue"></i>
+                        <i class="fa fa-pencil fa-lg" style="color:green"></i>
+                        <i class="fa fa-times fa-lg" style="color: red"></i>
                     </td>
                 </tr>
                 <tr>
@@ -105,17 +128,126 @@
                     </td>
                     <th>赵七</th>
                     <th>FS016</th>
+                    <th>5</th>
                     <th>全款</th>
                     <th>在线支付</th>
                     <th>2017-3-12 6:33:32</th>
                     <th>无</th>
                     <td>
-                        <i class="fa fa-pencil" style="color:green"></i>
-                        <i class="fa fa-times" style="color: red"></i>
+                        <i class="fa fa-info-circle fa-lg" style="color:blue"></i>
+                        <i class="fa fa-pencil fa-lg" style="color:green"></i>
+                        <i class="fa fa-times fa-lg" style="color: red"></i>
                     </td>
                 </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <div class="popup_window" id="rulePopupDiv" style="display: none;">
+        <div class="TC monitoring_tc">
+            <p class="XTC_title" id="addPurchaseOrderPopupTitle" style="display: none;">添加采购订单</p>
+            <p class="XTC_title" id="editPurchaseOrderPopupTitle" style="display: none;">编辑采购订单</p>
+            <div class="recordupdate_main dds">
+                <div class="Ncreate Bborder0 Mmargin0">
+                    <div class="Ncreate_div Ncreate_div2">
+                        <form class="form-horizontal" style="margin-left: 30px">
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">订单号</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="请输入采购订单号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">供应商</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>张三</option>
+                                        <option>李四</option>
+                                        <option>王五</option>
+                                        <option>贾六</option>
+                                        <option>赵七</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">销售单号</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>FS012</option>
+                                        <option>FS013</option>
+                                        <option>FS014</option>
+                                        <option>FS015</option>
+                                        <option>FS016</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">存货编码</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">单据状态</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>开立</option>
+                                        <option>审核</option>
+                                        <option>已付定金</option>
+                                        <option>收款</option>
+                                        <option>完成</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">付款方式</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>在线支付</option>
+                                        <option>现金支付</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">订单日期</label>
+                                <div class='col-xs-6' style="margin-left: 16px">
+                                    <div class="form-group">
+                                        <div class='input-group date' id='datetimepicker'>
+                                            <input type='text' class="form-control"/>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <lable class="col-xs-2 control-label">备&nbsp;&nbsp;注</lable>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="请输入备注">
+                                </div>
+                            </div>
+                        </form>
+                        <p class="Cclearb"></p>
+                    </div>
+                </div>
+                <div class="PpaddingT10">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="添加"
+                           id="addPurchaseOrderButton" style="display: none;" ng-click="toAddPurchaseOrder()">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="保存"
+                           id="editPurchaseOrderButton" style="display: none;" ng-click="doEditAutoAlertRule()">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="取消"
+                           id="cancelPurchaseOrderButton" ng-click="cancelAddEdit()">
+                    <p class="Cclearb"></p>
+                </div>
+            </div>
         </div>
     </div>
 
