@@ -1,7 +1,7 @@
 'usr strict'
 
 angular.module('furniturefe')
-    .controller('LoginCtrl', ['$rootScope', '$scope', '$location', '$cookies', '$filter', '$compile', '$timeout', function ($rootScope, $scope, $location, $cookies, $filter, $compile, $timeout) {
+    .controller('LoginCtrl', ['$rootScope', '$scope', '$location', '$cookies', '$filter', '$compile', '$timeout', '$http', function ($rootScope, $scope, $location, $cookies, $filter, $compile, $timeout, $http) {
 
         /**
          * 页面初始化函数
@@ -14,17 +14,40 @@ angular.module('furniturefe')
         $scope.isLogging = false;
         $rootScope.isLogged = false;
 
+        $scope.loginResult = null;
+
         /**
          *  延时登录3秒 打开动画
          */
         $scope.userLogin = () => {
+            if ($scope.name == null || $scope.password == null) {
+                swal("错误！", "请检查你的用户或密码是否为空!", "error");
+                return;
+            }
             $scope.isLogging = true;
             $timeout(() => {
-                $location.url('main');
-                $scope.isLogging = false;
+                $http.get(apiConfigs.user, {
+                    params: {
+                        name: $scope.name,
+                        password: $scope.password
+                    }
+                }).then(response => {
+                    $scope.loginResult = response.data;
+                });
+                console.log($scope.loginResult);
+                if ($scope.loginResult) {
+                    $location.url('main');
+                    $scope.isLogging = false;
+                } else {
+                    $scope.isLogging = false;
+                    swal("登录失败！", "请检查你的用户名和密码是否正确!", "error")
+                }
             }, 2000);
         };
 
+        /**
+         * 轮播图插件初始化
+         */
         let initUnsilder = () => {
             $(document).ready(() => {
                 let unslider04 = $('#b04').unslider({

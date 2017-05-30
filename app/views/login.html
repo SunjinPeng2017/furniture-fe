@@ -16,9 +16,9 @@
             <li>登录</li>
             <span class="tips"></span>
             <li><input type="text" name="userName" class="input-login-text"
-                       placeholder="请输入用户名" autofocus></li>
+                       placeholder="请输入用户名" ng-model="name" autofocus></li>
             <li><input type="password" name="passWord" class="input-login-text"
-                                                 placeholder="请输入密码"></li>
+                       placeholder="请输入密码" ng-model="password"></li>
             <li style="width: 100%;">
                 <button type="button" class="btn btn-link" style="float:right;outline: none" ng-click="userRegister()">
                     没有账号？注册...
