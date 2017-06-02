@@ -17,68 +17,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>张三</td>
-                    <td>北京市朝阳区</td>
-                    <td>13542342111</td>
-                    <td>s123131</td>
-                    <td>2016-5-4 14:26</td>
-                    <td>2018-6-4 14:26</td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>张三</td>
-                    <td>北京市朝阳区</td>
-                    <td>13542342111</td>
-                    <td>s123131</td>
-                    <td>2016-5-4 14:26</td>
-                    <td>2018-6-4 14:26</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>李四</td>
-                    <td>广州市白云区</td>
-                    <td>13642342114</td>
-                    <td>s123155</td>
-                    <td>2016-5-7 16:39</td>
-                    <td>2019-7-19 14:54</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>王五</td>
-                    <td>上海市</td>
-                    <td>18942342145</td>
-                    <td>s1233431</td>
-                    <td>2014-3-12 12:29</td>
-                    <td>2018-7-32 16:26</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>张六</td>
-                    <td>深圳市龙华区</td>
-                    <td>134423424365</td>
-                    <td>s123231</td>
-                    <td>2016-2-7 8:36</td>
-                    <td>2018-6-4 14:26</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>赵七</td>
-                    <td>广州市白云区</td>
-                    <td>1354234277</td>
-                    <td>s123368</td>
-                    <td>2015-11-4 19:23</td>
-                    <td>2018-10-7 12:46</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>贾八</td>
-                    <td>荆州市荆州区</td>
-                    <td>13842342125</td>
-                    <td>s1233785</td>
-                    <td>2014-3-24 9:54</td>
-                    <td>2018-7-12 23:26</td>
+                <tr ng-repeat="item in customerInfo track by $index">
+                    <td ng-bind="item.id"></td>
+                    <td ng-bind="item.customerName"></td>
+                    <td ng-bind="item.address"></td>
+                    <td ng-bind="item.phoneNumber"></td>
+                    <td ng-bind="item.financialNumber"></td>
+                    <td ng-bind="item.beginDate"></td>
+                    <td ng-bind="item.endDate"></td>
                 </tr>
                 </tbody>
             </table>

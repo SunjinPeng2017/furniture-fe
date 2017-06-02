@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('furniturefe')
-    .controller('MainCtrl', ['$rootScope', '$scope', '$location', '$cookies', '$filter', '$compile', '$timeout', function ($rootScope, $scope, $location, $cookies, $filter, $compile, $timeout) {
+    .controller('MainCtrl', ['$rootScope', '$scope', '$location', '$cookies', '$filter', '$compile', '$timeout', '$http', function ($rootScope, $scope, $location, $cookies, $filter, $compile, $timeout, $http) {
 
         $rootScope.isLogged = true;
 
@@ -383,12 +383,24 @@ angular.module('furniturefe')
         };
 
         /**
+         * 初始化加载 Echarts  数据
+         */
+        let initEchartsData = () => {
+            $http.get(
+                apiConfigs.eCharts
+            ).then(response => {
+            });
+        };
+
+        /**
          * 设置初始化加载函数
          */
         let init = () => {
             active();
             loadIndex();
             setEchart();
+
+            initEchartsData();
         };
 
         init();

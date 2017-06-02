@@ -14,8 +14,6 @@ angular.module('furniturefe')
         $scope.isLogging = false;
         $rootScope.isLogged = false;
 
-        $scope.loginResult = null;
-
         /**
          *  延时登录3秒 打开动画
          */
@@ -26,22 +24,21 @@ angular.module('furniturefe')
             }
             $scope.isLogging = true;
             $timeout(() => {
+                let loginResult = null;
                 $http.get(apiConfigs.user, {
                     params: {
                         name: $scope.name,
                         password: $scope.password
                     }
                 }).then(response => {
-                    $scope.loginResult = response.data;
+                    if (response.data) {
+                        $location.url('main');
+                        $scope.isLogging = false;
+                    } else {
+                        $scope.isLogging = false;
+                        swal("登录失败！", "请检查你的用户名和密码是否正确!", "error")
+                    }
                 });
-                console.log($scope.loginResult);
-                if ($scope.loginResult) {
-                    $location.url('main');
-                    $scope.isLogging = false;
-                } else {
-                    $scope.isLogging = false;
-                    swal("登录失败！", "请检查你的用户名和密码是否正确!", "error")
-                }
             }, 2000);
         };
 
