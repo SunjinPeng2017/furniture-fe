@@ -86,24 +86,43 @@ angular.module('furniturefe')
          *  点击 添加按钮确认 是否添加
          */
         $scope.toRegister = () => {
+
+            $scope.name = '';
+            $scope.password = '';
+            $scope.sex = '';
+            $scope.phoneNumber = '';
+            $scope.address = '';
+
+            let data = {
+                name: $scope.name,
+                password: $scope.password,
+                sex: $scope.sex,
+                phoneNumber: $scope.phoneNumber,
+                address: $scope.address,
+                permission: "普通用户",
+                registerTime: $("#datetime").val(),
+            };
+            console.log(data);
             swal({
                     title: "Are you sure ?",
                     text: "确定注册吗？",
                     type: "warning",
                     showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
+                    closeOnConfirm: false,
                     confirmButtonText: "确认",
                     cancelButtonText: "取消",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
+                    confirmButtonColor: "#DD6B55"
                 },
-                function (isConfirm) {
-                    if (isConfirm) {
+                function () {
+                    $http.post(
+                        apiConfigs.user,
+                        data
+                    ).then(response => {
                         $scope.cancelAddEdit();
                         swal("成功!", "", "success");
-                    } else {
+                    }, response => {
                         swal("失败！", "", "error");
-                    }
+                    });
                 });
         };
 
