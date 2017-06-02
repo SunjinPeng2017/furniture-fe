@@ -10,8 +10,10 @@
                     &nbsp 添加订单
                 </button>
                 <div class="form-group" style="margin-left: 20px">
-                    <input type="text" class="form-control" placeholder="请输入订单号" style="width: 300px"/>
-                    <button type="button" class="btn btn-success" style="outline:none"><i class="fa fa-search"></i>
+                    <input type="text" class="form-control" placeholder="请输入订单号" ng-model="saleOrderNumber"
+                           style="width: 300px"/>
+                    <button type="button" class="btn btn-success" ng-click="searchSaleOrder()" style="outline:none"><i
+                        class="fa fa-search"></i>
                         &nbsp; 查找
                     </button>
                 </div>
@@ -46,11 +48,11 @@
                     <td ng-bind="item.totalMoney"></td>
                     <td ng-bind="item.remark"></td>
                     <td>
-                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                        <a class="btn btn-danger edit" ng-click="deleteSaleOrder(item)" aria-label="Settings">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </a>
                         &nbsp
-                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                        <a class="btn btn-info edit" ng-click="editSaleOrder(item)" aria-label="Settings">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </a>
                     </td>
@@ -141,4 +143,49 @@
             </div>
         </div>
     </div>
+
+    <div class="popup_window" id="rulePopupDiv2" style="display: none;">
+        <div class="TC monitoring_tc">
+            <p class="XTC_title">查找销售订单结果</p>
+            <div class="recordupdate_main dds">
+                <div class="Ncreate Bborder0 Mmargin0">
+                    <div class="Ncreate_div Ncreate_div2">
+                        <table class="table">
+                            <thead>
+                            <tr class="row-name">
+                                <th style="width:10%">新/旧</th>
+                                <th>订单号</th>
+                                <th>销售日期</th>
+                                <th>订单状态</th>
+                                <th>客户名称</th>
+                                <th>发货地址</th>
+                                <th>总金额</th>
+                                <th>备注</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="row-content">
+                                <td><span class="label label-default"> New </span></td>
+                                <td ng-bind="searchData.saleNumber"></td>
+                                <td ng-bind="searchData.saleDate"></td>
+                                <td ng-bind="searchData.orderState"></td>
+                                <td ng-bind="searchData.customerName"></td>
+                                <td ng-bind="searchData.address"></td>
+                                <td ng-bind="searchData.totalMoney"></td>
+                                <td ng-bind="searchData.remark"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p class="Cclearb"></p>
+                    </div>
+                </div>
+                <div class="PpaddingT10">
+                    <input type="button" class="monitoring_input" value="取消"
+                           style="margin-left: 300px" ng-click="cancelButton()">
+                    <p class="Cclearb"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

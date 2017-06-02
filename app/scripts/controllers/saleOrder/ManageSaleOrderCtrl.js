@@ -91,5 +91,119 @@ angular.module('furniturefe')
             getSaleOrders();
         };
 
+        /**
+         * 点击查找按钮
+         */
+        $scope.searchSaleOrder = () => {
+            $('#rulePopupDiv2').show();
+            $http.get(
+                apiConfigs.saleOrder, {
+                    params: {
+                        saleNumber: $scope.saleOrderNumber
+                    }
+                }
+            ).then(response => {
+                $scope.searchData = response.data;
+            });
+        };
+
+        /**
+         * 查找页面中的取消按钮
+         */
+        $scope.cancelButton = () => {
+            $('#rulePopupDiv2').hide();
+        };
+
+        /**
+         * 点击删除按钮
+         */
+        $scope.deleteSaleOrder = item => {
+            swal({
+                    title: "Are you sure ?",
+                    text: "确定要删除该订单吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    confirmButtonText: "确认",
+                    cancelButtonText: "取消",
+                    confirmButtonColor: "#DD6B55"
+                },
+                function () {
+                    $http.delete(
+                        apiConfigs.saleOrder,
+                        {
+                            params: {
+                                id: item.id
+                            }
+                        }
+                    ).then(response => {
+                        swal("成功!", "", "success");
+                        getSaleOrders();
+                    }, response => {
+                        swal("失败！", "", "error");
+                    });
+                });
+        };
+
+        /**
+         * 点击编辑按钮
+         */
+        $scope.editSaleOrder = item => {
+            $('#rulePopupDiv').show();
+            $('#editSaleOrderPopupTitle').show();
+            $('#editSaleOrderButton').show();
+
+            $scope.saleNumber = item.saleNumber;
+            $("#dateTime2").val(item.saleDate);
+            $('#orderState option:selected').val(item.orderState);
+            $scope.customerName = item.customerName;
+            $scope.address = item.address;
+            $scope.totalMoney = item.totalMoney;
+            $scope.remark = item.remark;
+            $scope.id = item.id;
+        };
+
+        /**
+         * 点击确定编辑按钮
+         */
+        $scope.doEditAutoAlertRule = () => {
+            let data = {
+                saleNumber: $scope.saleNumber,
+                saleDate: $("#dateTime2").val(),
+                orderState: $('#orderState option:selected').val(),
+                customerName: $scope.customerName,
+                address: $scope.address,
+                totalMoney: $scope.totalMoney,
+                remark: $scope.remark,
+                id: $scope.id
+            };
+            swal({
+                    title: "Are you sure ?",
+                    text: "确定要修改该订单吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    confirmButtonText: "确认",
+                    cancelButtonText: "取消",
+                    confirmButtonColor: "#DD6B55"
+                },
+                function () {
+                    $http.put(
+                        apiConfigs.saleOrder,
+                        data
+                    ).then(response => {
+                        $scope.cancelAddEdit();
+                        swal("成功!", "", "success");
+                        getSaleOrders();
+                    }, response => {
+                        swal("失败！", "", "error");
+                    });
+                });
+            $scope.saleNumber = '';
+            $scope.customerName = '';
+            $scope.address = '';
+            $scope.totalMoney = '';
+            $scope.remark = '';
+        };
         init();
     }]);
