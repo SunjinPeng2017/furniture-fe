@@ -1,6 +1,8 @@
 'use strict';
 
-let basePath = "http://localhost:8080/v1.0/";
+let basePath = "http://localhost:8080/v1.0/";//本机使用
+
+//let basePath = "http://localhost:8080/v1.0/"; //服务器使用
 
 let apiConfigs = {
 
