@@ -24,7 +24,6 @@ angular.module('furniturefe')
             }
             $scope.isLogging = true;
             $timeout(() => {
-                let loginResult = null;
                 $http.get(apiConfigs.user, {
                     params: {
                         name: $scope.name,
