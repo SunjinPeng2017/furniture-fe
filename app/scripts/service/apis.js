@@ -13,4 +13,8 @@ let apiConfigs = {
 
     /**  客户信息管理接口*/
     customer: basePath + "customer",
+
+    /**  管理销售订单的相关接口 */
+    saleOrder: basePath + "saleOrder",
+    saleOrders: basePath + "saleOrders",
 };

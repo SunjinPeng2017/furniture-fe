@@ -84,12 +84,6 @@ angular.module('furniturefe')
          */
         $scope.toRegister = () => {
 
-            $scope.name = '';
-            $scope.password = '';
-            $scope.sex = '';
-            $scope.phoneNumber = '';
-            $scope.address = '';
-
             let data = {
                 name: $scope.name,
                 password: $scope.password,
@@ -121,6 +115,11 @@ angular.module('furniturefe')
                         swal("失败！", "", "error");
                     });
                 });
+            $scope.name = '';
+            $scope.password = '';
+            $scope.sex = '';
+            $scope.phoneNumber = '';
+            $scope.address = '';
         };
 
         /**

@@ -35,116 +35,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="row-content">
+                <tr class="row-content" ng-repeat="item in saleOrders track by $index">
                     <td class="check"><label><input type="checkbox" value=""></label></td>
                     <td><span class="label label-default"> New </span></td>
-                    <td>FS012</td>
-                    <td>2017-3-21 12:23:34</td>
-                    <td>开立</td>
-                    <td>张三</td>
-                    <td>北京市</td>
-                    <td>36000元</td>
-                    <td>全付款<i class="fa fa-thumbs-up" aria-hidden="true"></i></td>
-                    <td>
-                        <a class="btn btn-danger edit" href="" aria-label="Settings">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                        &nbsp
-                        <a class="btn btn-info edit" href="" aria-label="Settings">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="row-content">
-                    <td class="check"><label><input type="checkbox" value=""></label></td>
-                    <td><span class="label label-info"> Old </span></td>
-                    <td>FS013</td>
-                    <td>2017-4-25 12:27:34</td>
-                    <td>审核</td>
-                    <td>李四</td>
-                    <td>上海市</td>
-                    <td>25678元</td>
-                    <td>无</td>
-                    <td>
-                        <a class="btn btn-danger edit" href="" aria-label="Settings">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                        &nbsp
-                        <a class="btn btn-info edit" href="" aria-label="Settings">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="row-content">
-                    <td class="check"><label><input type="checkbox" value=""></label></td>
-                    <td><span class="label label-info"> Old </span></td>
-                    <td>FS014</td>
-                    <td>2016-2-30 6:2:45</td>
-                    <td>已付定金</td>
-                    <td>王五</td>
-                    <td>广州市</td>
-                    <td>324242元</td>
-                    <td>无</td>
-                    <td>
-                        <a class="btn btn-danger edit" href="" aria-label="Settings">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                        &nbsp
-                        <a class="btn btn-info edit" href="" aria-label="Settings">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="row-content">
-                    <td class="check"><label><input type="checkbox" value=""></label></td>
-                    <td><span class="label label-default"> New </span></td>
-                    <td>FS015</td>
-                    <td>2017-11-2 7:34:56</td>
-                    <td>收款</td>
-                    <td>贾六</td>
-                    <td>荆州市</td>
-                    <td>322000元</td>
-                    <td>付款完成<i class="fa fa-heart" aria-hidden="true"></i></td>
-                    <td>
-                        <a class="btn btn-danger edit" href="" aria-label="Settings">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                        &nbsp
-                        <a class="btn btn-info edit" href="" aria-label="Settings">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="row-content">
-                    <td class="check"><label><input type="checkbox" value=""></label></td>
-                    <td><span class="label label-info"> Old </span></td>
-                    <td>FS016</td>
-                    <td>2017-7-1 2:2:4</td>
-                    <td>付定金</td>
-                    <td>张七</td>
-                    <td>深圳市</td>
-                    <td>1231310元</td>
-                    <td>无</td>
-                    <td>
-                        <a class="btn btn-danger edit" href="" aria-label="Settings">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                        &nbsp
-                        <a class="btn btn-info edit" href="" aria-label="Settings">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="row-content">
-                    <td class="check"><label><input type="checkbox" value=""></label></td>
-                    <td><span class="label label-default"> New </span></td>
-                    <td>FS017</td>
-                    <td>2013-10-21 12:23:34</td>
-                    <td>完成</td>
-                    <td>小明</td>
-                    <td>佛山市</td>
-                    <td>3121300元</td>
-                    <td>Very Happy.. <i class="fa fa-smile-o" aria-hidden="true"></i></td>
+                    <td ng-bind="item.saleNumber"></td>
+                    <td ng-bind="item.saleDate"></td>
+                    <td ng-bind="item.orderState"></td>
+                    <td ng-bind="item.customerName"></td>
+                    <td ng-bind="item.address"></td>
+                    <td ng-bind="item.totalMoney"></td>
+                    <td ng-bind="item.remark"></td>
                     <td>
                         <a class="btn btn-danger edit" href="" aria-label="Settings">
                             <i class="fa fa-trash" aria-hidden="true"></i>
@@ -171,7 +71,8 @@
                             <div class="form-group">
                                 <label class="col-xs-2 control-label">订单号</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" placeholder="请输入销售订单号">
+                                    <input type="text" class="form-control" ng-model="saleNumber"
+                                           placeholder="请输入销售订单号">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -179,7 +80,7 @@
                                 <div class='col-xs-6' style="margin-left: 16px">
                                     <div class="form-group">
                                         <div class='input-group date' id='datetimepicker'>
-                                            <input type='text' class="form-control"/>
+                                            <input type='text' class="form-control" id="dateTime2"/>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -190,7 +91,7 @@
                             <div class="form-group">
                                 <label class="col-xs-2 control-label">订单状态</label>
                                 <div class="col-xs-6">
-                                    <select class="form-control">
+                                    <select class="form-control" id="orderState">
                                         <option>开立</option>
                                         <option>审核</option>
                                         <option>已付定金</option>
@@ -202,25 +103,26 @@
                             <div class="form-group">
                                 <label class="col-xs-2 control-label">客户名称</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" placeholder="请输入客户名称">
+                                    <input type="text" class="form-control" ng-model="customerName"
+                                           placeholder="请输入客户名称">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-2 control-label">客户地址</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" placeholder="请输入客户地址">
+                                    <input type="text" class="form-control" ng-model="address" placeholder="请输入客户地址">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <lable class="col-xs-2 control-label ">总金额(元)</lable>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" placeholder="请输入总金额">
+                                    <input type="text" class="form-control" ng-model="totalMoney" placeholder="请输入总金额">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <lable class="col-xs-2 control-label">备&nbsp;&nbsp;注</lable>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" placeholder="请输入备注">
+                                    <input type="text" class="form-control" ng-model="remark" placeholder="请输入备注">
                                 </div>
                             </div>
                         </form>
