@@ -205,5 +205,53 @@ angular.module('furniturefe')
             $scope.totalMoney = '';
             $scope.remark = '';
         };
+
+        /**
+         * 点击收定金按钮
+         */
+        $scope.getPreMoney = () => {
+            swal({
+                    title: "Are you sure?",
+                    text: "确定要收定金吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("确定", "", "success");
+                    } else {
+                        swal("取消", "", "error");
+                    }
+                });
+        };
+
+        /**
+         * 点击收款按钮
+         */
+        $scope.getAllMoney = () => {
+            swal({
+                    title: "Are you sure?",
+                    text: "确定要收款吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("确定", "", "success");
+                    } else {
+                        swal("取消", "", "error");
+                    }
+                });
+        };
         init();
     }]);
