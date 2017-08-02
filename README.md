@@ -1,14 +1,11 @@
-# furniture-fe
-毕业设计前端--《本居项目》
+# furniture-fe  
+毕业设计前端--《家具定制管理系统》
 
-#install packages
- npm install -g grunt
+## install packages  
+* install grunt: `npm install -g grunt`   
+* install bower: `npm install -g bower`
+* install other packages: `npm install`
+* install bower packages: `bower install`
  
- npm install -g bower
- 
- npm install
- 
- bower install
- 
-#run this project
-grunt server
+## run this project  
+`grunt server`

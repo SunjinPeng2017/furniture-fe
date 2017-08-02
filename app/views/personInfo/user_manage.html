@@ -1,0 +1,182 @@
+<div class="content">
+    <div class="hole_content">
+        <div class="content_title" style="background-color: #80B1CB">
+            <span class="echart-font">用户信息管理</span>
+        </div>
+        <div class="content_table">
+            <form class="form-inline" style="margin-top: 10px;margin-left: 20px">
+                <button type="button" class="btn btn-success" style="outline:none" ng-click="addUser()"><span
+                    class="glyphicon glyphicon-plus"></span>
+                    &nbsp 添加新用户
+                </button>
+                <button type="button" style="margin-left: 20px;outline: none" class="btn btn-danger">
+                    <i class="fa fa-trash-o fa-lg"></i>&nbsp;批量删除
+                </button>
+            </form>
+            <hr/>
+            <table class="table table-hover">
+                <thead>
+                <tr class="row-name">
+                    <th>选/不选</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>电话号码</th>
+                    <th>地址</th>
+                    <th>权限</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>13123135435</td>
+                    <td>北京市</td>
+                    <td>普通用户</td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>1231412342</td>
+                    <td>荆州市</td>
+                    <td>供应商</td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>1435343453</td>
+                    <td>荆州市</td>
+                    <td>管理员</td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td>贾六</td>
+                    <td>女</td>
+                    <td>15342342342</td>
+                    <td>上海市</td>
+                    <td>客户</td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="row-content">
+                    <td class="check"><label><input type="checkbox" value=""></label></td>
+                    <td>赵七</td>
+                    <td>男</td>
+                    <td>154312312</td>
+                    <td>重庆市</td>
+                    <td>普通用户</td>
+                    <td>
+                        <a class="btn btn-danger edit" href="" aria-label="Settings">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                        &nbsp
+                        <a class="btn btn-info edit" href="" aria-label="Settings">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="popup_window" id="rulePopupDiv" style="display: none;">
+        <div class="TC monitoring_tc">
+            <p class="XTC_title" id="addUserPopupTitle" style="display: none;">添加销售订单</p>
+            <p class="XTC_title" id="editUserPopupTitle" style="display: none;">编辑销售订单</p>
+            <div class="recordupdate_main dds">
+                <div class="Ncreate Bborder0 Mmargin0">
+                    <div class="Ncreate_div Ncreate_div2">
+                        <form class="form-horizontal" style="margin-left: 30px">
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">姓名</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" placeholder="请输入用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">性别</label>
+                                <label class="radio-inline" style="margin-left: 16px">
+                                    <input type="radio" name="inlineRadioOptions" value="男" checked> 男
+                                </label>
+                                <label class="radio-inline" style="margin-left: 20px">
+                                    <input type="radio" name="inlineRadioOptions" value="女"> 女
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">电话号码</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" value="18986653211">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">地址</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" value="荆州市">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">权限</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>普通用户</option>
+                                        <option>供应商</option>
+                                        <option>客户</option>
+                                        <option>管理员</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="Cclearb"></p>
+                    </div>
+                </div>
+                <div class="PpaddingT10">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="添加"
+                           id="addUserButton" style="display: none;" ng-click="toAddUser()">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="保存"
+                           id="editUserButton" style="display: none;" ng-click="doEditAutoAlertRule()">
+                    <input type="button" class="monitoring_input MmarginR70 FfloatR" value="取消"
+                           id="cancelUserButton" ng-click="cancelAddEdit()">
+                    <p class="Cclearb"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

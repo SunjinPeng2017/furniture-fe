@@ -51,11 +51,23 @@ angular.module('furniturefe', [
             controller: 'ManagePurchaseOrderCtrl',
             controllerAs: 'ManagePurchaseOrderCtrl'
         })
+        .state('manage_delivery_order', {
+            url: '/manage_delivery_order',
+            templateUrl: 'views/deliveryOrder/manage_delivery_order.html',
+            controller: 'ManageDeliveryOrderCtrl',
+            controllerAs: 'ManageDeliveryOrderCtrl'
+        })
         .state('user_info', {
             url: '/user_info',
             templateUrl: 'views/personInfo/user_info.html',
             controller: 'UserInfoCtrl',
             controllerAs: 'UserInfoCtrl'
+        })
+        .state('user_manage', {
+            url: '/user_manage',
+            templateUrl: 'views/personInfo/user_manage.html',
+            controller: 'UserManageCtrl',
+            controllerAs: 'UserManageCtrl'
         })
 }).run(['$rootScope', '$cookies', '$location', '$log', function ($rootScope, $cookies, $location, $log) {
 }]);

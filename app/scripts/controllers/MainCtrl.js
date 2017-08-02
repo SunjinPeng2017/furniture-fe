@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('furniturefe')
-    .controller('MainCtrl', ['$rootScope', '$scope', '$location', '$cookies', '$filter', '$compile', '$timeout', function ($rootScope, $scope, $location, $cookies, $filter, $compile, $timeout) {
+    .controller('MainCtrl', ['$rootScope', '$scope', '$location', '$cookies', '$filter', '$compile', '$timeout', '$http', function ($rootScope, $scope, $location, $cookies, $filter, $compile, $timeout, $http) {
 
         $rootScope.isLogged = true;
 
@@ -55,17 +55,7 @@ angular.module('furniturefe')
             str += '<img src="images/main/icon_license_enter.png" class="icon-menu">';
             str += '<p class="menu-title"  onclick="createCss(this)">发货单</p>';
             str += '<ul class="item-menu">';
-            str += '<li><a ui-sref="store_manager" >查看发货单</a></li>';
-            str += '<li><a ui-sref="store_manager" >管理发货单</a></li>';
-            str += '</ul>';
-            str += '</li>';
-            str += '<li class="li-item">';
-            str += '<img src="images/main/icon_customized_services.png" class="icon-menu">';
-            str += '<img src="images/main/icon_customized_services_enter.png" class="icon-menu">';
-            str += '<p class="menu-title"  onclick="createCss(this)">出入库单</p>';
-            str += '<ul class="item-menu">';
-            str += '<li><a ui-sref="promotion_manager" >出入库单查看</a></li>';
-            str += '<li><a ui-sref="promotion_manager" >出入库单管理</a></li>';
+            str += '<li><a ui-sref="manage_delivery_order" >管理发货单</a></li>';
             str += '</ul>';
             str += '</li>';
             str += '<li class="li-item">';
@@ -74,7 +64,7 @@ angular.module('furniturefe')
             str += '<p class="menu-title"  onclick="createCss(this)">系统设置</p>';
             str += '<ul class="item-menu">';
             str += '<li><a ui-sref="user_info" >个人中心</a></li>';
-            str += '<li><a ui-sref="sys_salesclerk" >用户管理</a></li>';
+            str += '<li><a ui-sref="user_manage" >用户管理</a></li>';
             str += '</ul>';
             str += '</li>';
             str += '</ul>';
@@ -393,12 +383,24 @@ angular.module('furniturefe')
         };
 
         /**
+         * 初始化加载 Echarts  数据
+         */
+        let initEchartsData = () => {
+            $http.get(
+                apiConfigs.eCharts
+            ).then(response => {
+            });
+        };
+
+        /**
          * 设置初始化加载函数
          */
         let init = () => {
             active();
             loadIndex();
             setEchart();
+
+            initEchartsData();
         };
 
         init();
