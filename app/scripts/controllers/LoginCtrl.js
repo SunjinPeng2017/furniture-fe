@@ -1,4 +1,4 @@
-'usr strict'
+'usr strict';
 
 angular.module('furniturefe')
     .controller('LoginCtrl', ['$rootScope', '$scope', '$location', '$cookies', '$filter', '$compile', '$timeout', '$http', function ($rootScope, $scope, $location, $cookies, $filter, $compile, $timeout, $http) {
@@ -7,6 +7,8 @@ angular.module('furniturefe')
          * 页面初始化函数
          */
         let init = () => {
+            $scope.name = "admin";
+            $scope.password = "admin";
             initUnsilder();
             initDateTimePicker();
         };
